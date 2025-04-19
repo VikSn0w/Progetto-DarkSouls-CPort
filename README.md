@@ -26,14 +26,14 @@ This project is a **C++ port** of a narrative-driven, turn-based RPG inspired by
 
 | Component                         | Status           |
 |----------------------------------|------------------|
-| Main loop (`Main.py`)                | 🔄 Under Development       |
-| Enemy module (`Enemy.py`)        | ✅ Fully Ported   |
-| Player module (`Player.py`)      | ✅ Fully Ported     |
-| Menu system & class selection  (`Menu.py`)   | 🔄 Under Development      |
-| Dialogue system (NPCs)           | 🚫 Not Started       |
-| Game loop & narrative intro      | 🚫 Not Started       |
-| Area Tranquilla interactions     | 🚫 Not Started      |
-| Save/load system                 | 🚫 Not Yet        |
+| Main loop (`Main.py`)                | 🔄 |
+| Enemy module (`Enemy.py`)        | ✅ |
+| Player module (`Player.py`)      | ✅ |
+| Menu system & class selection  (`Menu.py`)   | 🔄 |
+| Dialogue system (NPCs)           | 🚫 |
+| Game loop & narrative intro      | 🚫 |
+| Area Tranquilla interactions     | 🚫 |
+| Save/load system                 | 🚫 |
 
 > ✅ = Complete 🔄 = Under Development 🚫 = Not Started
 
@@ -46,6 +46,7 @@ This project is a **C++ port** of a narrative-driven, turn-based RPG inspired by
 - 🎮 Easier integration with C++ game engines or graphical frontends in the future
 - 🗿 C++ Master Race Superiority
 ---
+📁 Project Tree (current)
 ```
 /Progetto-DarkSouls-CPort
 │
