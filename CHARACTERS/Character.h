@@ -18,8 +18,8 @@ class Character {
         virtual ~Character() = default;
 
         Character(std::string name, int max_health, int max_stamina);
-        virtual void doAttack() = 0;
-        virtual void receiveDamage() = 0;
+        virtual int doAttack() = 0;
+        virtual void receiveDamage(int damage) = 0;
 };
 
 
