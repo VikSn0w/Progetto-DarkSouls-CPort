@@ -16,7 +16,8 @@ class NPC {
         std::string getName();
         std::string getDialog(int index);
         int getDialogCount();
-        int loadDialogs(std::string fileName);
+        int loadDialogs(std::string dialogs[], int dialogCount);
+        void doSpeaking();
 };
 
 

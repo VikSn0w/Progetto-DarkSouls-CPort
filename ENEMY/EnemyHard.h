@@ -9,6 +9,7 @@
 
 #include "Enemy.h"      // bring in the base-class declaration
 #include <string>       // for std::string
+#include "../CHARACTERS/Player.h"
 
 class EnemyHard : public Enemy {
 protected:
@@ -16,9 +17,9 @@ protected:
 public:
     EnemyHard(std::string name, int health, int stamina, int resistance, bool isBoss);
 
-    virtual int enemyLightAttack() = 0;
-    virtual int enemyHeavyAttack() = 0;
-    virtual void enemyReceiveDamage(int damage) = 0;
+    virtual void enemyLightAttack(Player& player);
+    virtual void enemyHeavyAttack(Player& player);
+    virtual void enemyReceiveDamage(int damage);
     bool isItBoss();
 };
 

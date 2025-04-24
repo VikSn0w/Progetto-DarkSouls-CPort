@@ -9,14 +9,17 @@
 
 #include "Enemy.h"      // bring in the base-class declaration
 #include <string>       // for std::string
+#include "../CHARACTERS/Player.h"
+
+
 
 class EnemyMedium : public Enemy {
 public:
     EnemyMedium(std::string name, int health, int stamina, bool isBoss);
 
-    virtual int enemyLightAttack() = 0;
-    virtual int enemyHeavyAttack() = 0;
-    virtual void enemyReceiveDamage(int damage) = 0;
+    virtual void enemyLightAttack(Player& player);
+    virtual void enemyHeavyAttack(Player& player);
+    virtual void enemyReceiveDamage(int damage);
 };
 
 #endif // ENEMYMEDIUM_H

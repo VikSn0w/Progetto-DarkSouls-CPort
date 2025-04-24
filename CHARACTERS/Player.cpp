@@ -19,6 +19,7 @@ int Player::heavyAttack(std::string foo_name) {
         return damage;
     }
     std::cout << this->name << " non ha abbastanza stamina per esegire un attacco pesante su " << foo_name << std::endl;
+    return 0;
 }
 
 int Player::lightAttack(std::string foo_name) {
@@ -29,13 +30,18 @@ int Player::lightAttack(std::string foo_name) {
         return damage;
     }
     std::cout << this->name << " non ha abbastanza stamina per esegire un attacco leggero su " << foo_name << std::endl;
+    return 0;
 }
 
 
-int Player::doAttack(std::string foo_name, char selection) {
+int Player::doAttack(Enemy, char selection) {
     if (selection == 'p') {
         return this->heavyAttack(foo_name);
     }
     return this->lightAttack(foo_name);
+}
+
+void Player::receiveDamage(int damage) {
+    this->current_health -= damage;
 }
 

@@ -4,6 +4,7 @@
 
 #include "NPC.h"
 
+#include <conio.h>
 #include <iostream>
 #include <ostream>
 
@@ -23,8 +24,20 @@ int NPC::getDialogCount() {
     return this->dialogCount;
 }
 
-int NPC::loadDialogs(std::string fileName) {
-    std::cout << fileName << std::endl;
+int NPC::loadDialogs(std::string dialogs[], int dialogCount) {
+    for (int i = 0; i < dialogCount; i++) {
+        this->dialogs[i] = dialogs[i];
+    }
+    this->dialogCount = dialogCount;
+    return dialogCount;
+}
+
+void NPC::doSpeaking() {
+    std::cout << this->name << ": " << std::endl;
+    for (int i = 0; i < this->dialogCount; i++) {
+        std::cout << this->dialogs[i] << std::endl;
+        getch();
+    }
 }
 
 

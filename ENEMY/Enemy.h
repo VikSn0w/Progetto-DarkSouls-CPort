@@ -19,8 +19,8 @@ class Enemy {
 
         Enemy(std::string name, int health, int stamina, bool isBoss);
 
-        virtual int enemyLightAttack() = 0;
-        virtual int enemyHeavyAttack() = 0;
+        virtual void enemyLightAttack() = 0;
+        virtual void enemyHeavyAttack() = 0;
         virtual void enemyReceiveDamage(int damage) = 0;
         void resetStamina();
 };

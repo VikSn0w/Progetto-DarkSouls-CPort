@@ -7,6 +7,7 @@
 #include <iostream>
 #include <ostream>
 
+#include "../CHARACTERS/Player.h"
 #include "../GENERAL/gpfs.h"
 EnemyBase::EnemyBase(std::string name,
                      int health,
@@ -17,20 +18,19 @@ EnemyBase::EnemyBase(std::string name,
 }
 
 
-int EnemyBase::enemyLightAttack() {
+void EnemyBase::enemyLightAttack(Player& player) {
     if (gpfs::generateRandomFloatLOHI(0,1) > 0.1 and this->current_stamina >= 10) {
         int damage = gpfs::generateRandomIntLOHI(30,50);
         std::cout << this->name << " ti ha colpito! Hai perso " << damage << " punti vita." << std::endl;
         this->current_stamina -= 10;
-        return damage;
+        player.receiveDamage(damage);
     }
     this->resetStamina();
     std::cout << this->name << " ti ha mancato!" << std::endl;
-    return 0;
 };
 
-int EnemyBase::enemyHeavyAttack() {
-    return this->enemyLightAttack();
+void EnemyBase::enemyHeavyAttack(Player& player) {
+    return this->enemyLightAttack(player);
 };
 
 void EnemyBase::enemyReceiveDamage(int damage) {

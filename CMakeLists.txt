@@ -15,4 +15,12 @@ add_executable(untitled8 main.cpp
         GENERAL/gpfs.cpp
         GENERAL/gpfs.h
         CHARACTERS/Character.cpp
-        CHARACTERS/Character.h)
+        CHARACTERS/Character.h
+        CHARACTERS/Player.cpp
+        CHARACTERS/Player.h
+        CHARACTERS/NPC.cpp
+        CHARACTERS/NPC.h
+        CHARACTERS/Enemy.cpp
+        CHARACTERS/Enemy.h
+        MENU/menu.cpp
+        MENU/menu.h)
