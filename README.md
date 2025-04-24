@@ -69,7 +69,10 @@ This project is a **C++ port** of a narrative-driven, turn-based RPG inspired by
   ├── NPC.cpp
   ├── NPC.h
   ├── Player.cpp
-  └── Player.h 
+  └── Player.h
+├── MENU
+  ├── menu.cpp     
+  └── menu.h    
 └── GENERAL
   ├── gpfs.cpp      # General Purpose FunctionS
   └── gpfs.h        
