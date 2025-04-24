@@ -27,15 +27,15 @@ This project is a **C++ port** of a narrative-driven, turn-based RPG inspired by
 | Component                         | Status           |
 |----------------------------------|------------------|
 | Main loop (`Main.py`)                | 🔄 |
-| Enemy module (`Enemy.py`)        | ✅ |
-| Player module (`Player.py`)      | ✅ |
+| Enemy module (`Enemy.py`)        | ⚠️ |
+| Player module (`Player.py`)      | ⚠️ |
 | Menu system & class selection  (`Menu.py`)   | 🔄 |
-| Dialogue system (NPCs)           | 🚫 |
+| Dialogue system (NPCs)           | ✅ |
 | Game loop & narrative intro      | 🚫 |
 | Area Tranquilla interactions     | 🚫 |
-| Save/load system                 | 🚫 |
+| Save/load system                 | ⛔ |
 
-> ✅ = Complete 🔄 = Under Development 🚫 = Not Started
+> ✅ = Complete 🔄 = Under Development 🚫 = Not Started ⛔ = Not in program ⚠️ = Rewriting
 
 ---
 
