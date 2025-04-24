@@ -32,7 +32,7 @@ This project is a **C++ port** of a narrative-driven, turn-based RPG inspired by
 | Menu system & class selection  (`Menu.py`)   | 🔄 |
 | Dialogue system (NPCs)           | ✅ |
 | Game loop & narrative intro      | 🚫 |
-| Area Tranquilla interactions     | 🚫 |
+| Area Tranquilla interactions     | 🔄 |
 | Save/load system                 | ⛔ |
 
 > ✅ = Complete 🔄 = Under Development 🚫 = Not Started ⛔ = Not in program ⚠️ = Rewriting
