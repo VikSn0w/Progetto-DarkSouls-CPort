@@ -62,13 +62,7 @@ This project is a **C++ port** of a narrative-driven, turn-based RPG inspired by
 ├── main.cpp               
 ├── ENEMY
   ├── Enemy.cpp
-  ├── Enemy.h
-  ├── EnemyBase.cpp
-  ├── EnemyBase.h
-  ├── EnemyMedium.cpp
-  ├── EnemyMedium.h
-  ├── EnemyHard.cpp
-  └── EnemyHard.h 
+  └── Enemy.h
 ├── CHARACTERS
   ├── Character.cpp
   ├── Character.h
