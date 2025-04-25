@@ -91,8 +91,8 @@ This project is a **C++ port** of a narrative-driven, turn-based RPG inspired by
 
 ```bash
 git clone https://github.com/VikSn0w/Progetto-DarkSouls-CPort.git
-cd DarkSoulsRPG-CPP
+cd Progetto-DarkSouls-CPort
 mkdir build && cd build
 cmake ..
 cmake --build .
-./DarkSoulsRPG
+./Progetto-DarkSouls-CPort
