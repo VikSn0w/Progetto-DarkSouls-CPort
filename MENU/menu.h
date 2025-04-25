@@ -31,4 +31,8 @@ CharacterClass chooseClass(char choice);
 Player setClassToPlayer(CharacterClass class_);
 
 Player chooseClassMenu();
+
+void area_tranquilla();
+
+void combatti(Player& player, Enemy& enemy);
 #endif //MENU_H

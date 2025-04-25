@@ -18,6 +18,34 @@ class Character {
         virtual ~Character() = default;
 
         Character(std::string name, int max_health, int max_stamina);
+
+        [[nodiscard]] std::string getName() const {
+            return name;
+        }
+
+        [[nodiscard]] int getMaxHealth() const {
+            return max_health;
+        }
+
+        [[nodiscard]] int getCurrentHealth() const {
+            return current_health;
+        }
+
+        [[nodiscard]] int getCurrentStamina() const {
+            return current_stamina;
+        }
+
+        [[nodiscard]] int getMaxStamina() const {
+            return max_stamina;
+        }
+
+        [[nodiscard]] void resetCurrentStamina()  {
+            this->current_stamina = this->max_stamina;
+        }
+
+        [[nodiscard]] void resetCurrentHealth()  {
+            this->current_health = this->max_health;
+        }
 };
 
 

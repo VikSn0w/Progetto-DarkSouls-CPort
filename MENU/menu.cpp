@@ -8,6 +8,7 @@
 #include <ostream>
 
 #include "../CHARACTERS/NPC.h"
+#include "../ENEMY/Enemy.h"
 
 CharacterClass chooseClass(char choice) {
     if (choice - '0' > 0 and choice - '0' <= N_CLASSES - 1) {
@@ -23,7 +24,7 @@ Player setClassToPlayer(CharacterClass class_) {
 
 Player chooseClassMenu() {
     std::cout << "Scegli la tua classe:" << std::endl;
-    CharacterClass class_ = chooseClass(0);
+    CharacterClass class_ = chooseClass(static_cast<short int>('0'));
     while (class_.name == classes[0].name) {
         for (int i = 1; i < N_CLASSES; i++) {
             std::cout << i << ") " << classes[i].name << " - "
@@ -33,7 +34,8 @@ Player chooseClassMenu() {
             << "St.: " << classes[i].stamina
             << std::endl;
         }
-        char choice = getch();
+        char choice = '0';
+        std::cin >> choice;
         class_ = chooseClass(choice);
     }
     return setClassToPlayer(class_);
@@ -55,15 +57,15 @@ void area_tranquilla() {
     std::string npc3_dialogs[npc3_dialogCount] = {"La battaglia è la mia vita.", "Torna quando sarai un guerriero vero."};
     npc3.loadDialogs(npc2_dialogs, npc3_dialogCount);
 
-    short int choice = '0';
+    char choice = '0';
     while (choice != '4') {
         std::cout << "|----Area Tranquilla----|" << std::endl;
         std::cout << "1) " << npc1.getName() << std::endl;
         std::cout << "2) " << npc2.getName() << std::endl;
         std::cout << "3) " << npc3.getName() << std::endl;
         std::cout << "4) " << "Esci e affronta il prossimo nemico" << std::endl;
-        choice = getch();
-        switch (choice) {
+        std::cin >> choice;
+        switch (tolower(choice)) {
             case '1':
                 npc1.doSpeaking();
                 break;
@@ -75,7 +77,7 @@ void area_tranquilla() {
             break;
                 break;
             case '4':
-                choice = '4';
+                std::cout << "Ti incammini verso la prossima battaglia..." << std::endl;
                 break;
             default:
                 choice = '0';
@@ -85,3 +87,38 @@ void area_tranquilla() {
     }
 }
 
+void combatti(Player& player, Enemy& enemy) {
+    bool evasion = false;
+    while (player.getCurrentHealth() > 0 && enemy.getCurrentHealth() > 0 && evasion == false) {
+        std::cout << "[GIOCATORE] " << player.getName() << " - "
+        << "HP: " << player.getCurrentHealth() << " | " << "St.: " << player.getCurrentStamina() << std::endl;
+        std::cout << "[NEMICO]" << enemy.getName() << " | " << "HP: " << enemy.getCurrentHealth() << " | " << "Lv. " << enemy.getLevel() << std::endl;
+        std::cout << "Vuoi attaccare (a) o scappare (s)?" << std::endl;
+        char choice = 'a';
+        std::cin >> choice;
+        switch (tolower(choice)) {
+            case 'a':
+                player.doAttack(enemy);
+                if (enemy.getCurrentHealth() > 0) {
+                    if (gpfs::generateRandomIntLOHI(1,2) == 1) {
+                        enemy.lightAttack(player);
+                    } else {
+                        enemy.heavyAttack(player);
+                    }
+                } else {
+                    std::cout << "Hai ucciso il nemico!" << std::endl;
+                    player.resetCurrentHealth();
+                    player.resetCurrentStamina();
+                    player.incrementEnemyCount();
+                }
+                break;
+            case 's':
+                evasion = true;
+                std::cout << "Il giocatore è scappato!" << std::endl;
+                break;
+            default:
+                std::cout << "Scelta non valida." << std::endl;
+            break;
+        }
+    }
+}

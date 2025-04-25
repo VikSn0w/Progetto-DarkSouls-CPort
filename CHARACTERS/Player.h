@@ -5,6 +5,7 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 #include "Character.h"
+class Enemy;
 
 class Player: public Character {
     private:
@@ -14,10 +15,16 @@ class Player: public Character {
         int defence = 0;
     public:
         Player(std::string name, int max_health, int max_stamina, int base_attack, int defence);
-        virtual int lightAttack(std::string foo_name);
-        virtual int heavyAttack(std::string foo_name);
+        virtual void lightAttack(Enemy& enemy);
+        virtual void heavyAttack(Enemy& enemy);
         void receiveDamage(int damage);
-        virtual int doAttack(std::string foo_name, char selection) ;
+        void incrementEnemyCount() {
+            this->enemyCount++;
+        }
+        int getEnemyCount() {
+            return this->enemyCount;
+        }
+        virtual void doAttack(Enemy& enemy) ;
 };
 
 #endif //PLAYER_H

@@ -6,6 +6,7 @@
 
 #include <conio.h>
 #include <iostream>
+#include <limits>
 #include <ostream>
 
 NPC::NPC(std::string name) {
@@ -36,7 +37,8 @@ void NPC::doSpeaking() {
     std::cout << this->name << ": " << std::endl;
     for (int i = 0; i < this->dialogCount; i++) {
         std::cout << this->dialogs[i] << std::endl;
-        getch();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Clean buffer
+        std::cin.get(); // Waits for Enter
     }
 }
 
